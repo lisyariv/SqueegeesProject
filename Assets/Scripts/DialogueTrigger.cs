@@ -8,7 +8,8 @@ public class DialogueTrigger : MonoBehaviour
     public Actor[] actors;
 
     [Header("Visual Cue")]
-    [SerializeField] private GameObject visualCue;
+    public GameObject visualCue;
+    public GameObject dialogueManager;
 
     // [Header("ink JSON")]
     // [SerializeField] private TextAsset inkJSON;
@@ -29,7 +30,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Update()
     {
-        if(playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying)
+        if(playerInRange && !dialogueManager.GetComponent<DialogueManager>().dialogueIsPlaying)
         {
             visualCue.SetActive(true);
 

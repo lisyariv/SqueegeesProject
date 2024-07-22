@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 downMovement;
 
     public GameObject gameManager;
+    public GameObject dialogueManager;
 
     public float timer;
 
@@ -28,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(DialogueManager.GetInstance().dialogueIsPlaying == false)
+        if(dialogueManager.GetComponent<DialogueManager>().dialogueIsPlaying == false)
         {
             if(Input.GetKey(KeyCode.W))
         {
