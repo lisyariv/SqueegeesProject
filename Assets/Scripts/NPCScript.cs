@@ -10,7 +10,13 @@ public class NPCScript : MonoBehaviour
     public GameObject gameManager;
 
     public bool playerInRange;
-    // public GameObject dialogueTriggedr;
+    public bool isDialogue2Done;
+
+    public void Awake()
+    {
+        isDialogue2Done = false;
+        playerInRange = false;
+    }
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
@@ -40,11 +46,19 @@ public class NPCScript : MonoBehaviour
             if(Input.GetKey(KeyCode.E))
             {
                 trigger.StartDialogue();
+                isDialogue2Done = true;
             }
         }
         else
         {
             trigger.visualCue.SetActive(false);
+            playerInRange = false;
+        }
+
+        if(isDialogue2Done == true)
+        {
+            trigger.visualCue.SetActive(false);
+            playerInRange = false;
         }
 
     }

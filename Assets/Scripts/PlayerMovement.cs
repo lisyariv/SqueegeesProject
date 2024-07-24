@@ -32,24 +32,29 @@ public class PlayerMovement : MonoBehaviour
         if(dialogueManager.GetComponent<DialogueManager>().dialogueIsPlaying == false)
         {
             if(Input.GetKey(KeyCode.W))
-        {
-            GetComponent<Transform>().position += upMovement;
-        }
-
-        if(Input.GetKey(KeyCode.A))
-        {
-            GetComponent<Transform>().position += leftMovement;
-        }
-
-        if(Input.GetKey(KeyCode.S))
-        {
-            GetComponent<Transform>().position += downMovement;
-        }
-
-        if(Input.GetKey(KeyCode.D))
-        {
-            GetComponent<Transform>().position += rightMovement;
-        }
+           {
+             GetComponent<Transform>().position += upMovement;
+             GetComponent<Animator>().Play("walkingWBack");
+           }
+            else if(Input.GetKey(KeyCode.A))
+           {
+             GetComponent<Transform>().position += leftMovement;
+             GetComponent<Animator>().Play("walkingLeft");
+           }
+            else if(Input.GetKey(KeyCode.S))
+           {
+             GetComponent<Transform>().position += downMovement;
+             GetComponent<Animator>().Play("walkingForward");
+           }
+            else if(Input.GetKey(KeyCode.D))
+           {
+             GetComponent<Transform>().position += rightMovement;
+             GetComponent<Animator>().Play("walkingRight");
+           }
+            else
+           {
+             GetComponent<Animator>().Play("Idle");
+           }
         }
         if(isTextDisplayed == true)
         {

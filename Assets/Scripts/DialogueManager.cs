@@ -18,6 +18,7 @@ public class DialogueManager : MonoBehaviour
   // [Header("dialogue UI")]
   public GameObject dialoguePanel;
   public GameObject trigger;
+  public GameObject invisibleBarrier;
   public TextMeshProUGUI dialogueText;
 
   // private Story currentStory;
@@ -78,6 +79,7 @@ public class DialogueManager : MonoBehaviour
       dialoguePanel.SetActive(false);
       isDialogue1Done = true;
       trigger.SetActive(false);
+      invisibleBarrier.SetActive(false);
     }
   }
 
