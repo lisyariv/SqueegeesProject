@@ -17,11 +17,14 @@ public class DialogueManager : MonoBehaviour
 
   // [Header("dialogue UI")]
   public GameObject dialoguePanel;
+  public GameObject trigger;
+  public GameObject invisibleBarrier;
   public TextMeshProUGUI dialogueText;
 
   // private Story currentStory;
  //Allow other scripts to read the value and not edit
-  public bool dialogueIsPlaying {get; private set;}
+  public bool dialogueIsPlaying;
+  public bool isDialogue1Done;
 
   private void Awake()
   {
@@ -74,6 +77,9 @@ public class DialogueManager : MonoBehaviour
       Debug.Log("Conversation ended!");
       dialogueIsPlaying = false;
       dialoguePanel.SetActive(false);
+      isDialogue1Done = true;
+      trigger.SetActive(false);
+      invisibleBarrier.SetActive(false);
     }
   }
 
@@ -81,6 +87,7 @@ public class DialogueManager : MonoBehaviour
   {
     dialogueIsPlaying = false;
     dialoguePanel.SetActive(false);
+    isDialogue1Done = false;
   }
 
   private void Update()
