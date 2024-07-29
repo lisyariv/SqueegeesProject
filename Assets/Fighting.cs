@@ -4,21 +4,23 @@ using UnityEngine;
 
 public class Fighting : MonoBehaviour
 {
-    public List<GameObject> expressionPrefabs;
+    public List<GameObject> objectPrefabs;
     public Vector3 expressionPos1;
     public List<Vector3> expressionPosList;
     public float MinX, MaxX, MinY, MaxY;
-
+    private Vector2 screenBounds;
 
     public bool fight;
     public float timer;
+    public float spawnTimer;
 
     // Start is called before the first frame update
     void Start()
     {
         timer = 60f;
-        Instantiate(expressionPrefabs[0]);
+        Instantiate(objectPrefabs[Random.Range(0,3)]);
         Debug.Log("Dodge the enemy's attacks!");
+        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
     }
 
     // Update is called once per frame
@@ -26,6 +28,7 @@ public class Fighting : MonoBehaviour
     {
         setMinAndMax();
         timer -= Time.deltaTime;
+        spawnTimer += Time.deltaTime;
         fighting();
     }
 
@@ -47,5 +50,12 @@ public class Fighting : MonoBehaviour
 
     }
     //Function created for spawning the dialogue texts at random points. 
+    public void spawnObjects()
+    {
+        spawnTimer = 0;
+        if (spawnTimer >= 6)
+        {
 
+        }
+    }
 }
