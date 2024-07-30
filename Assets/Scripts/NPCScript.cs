@@ -5,16 +5,18 @@ using UnityEngine;
 public class NPCScript : MonoBehaviour
 {
     public DialogueTrigger trigger;
+    public BullyScript dialogue;
+    public trigger4Npc Npc;
 
     public GameObject dialogueManager;
     public GameObject gameManager;
 
     public bool playerInRange;
-    public bool isDialogue2Done;
+    public bool isDialogue3Done;
 
     public void Awake()
     {
-        isDialogue2Done = false;
+        isDialogue3Done = false;
         playerInRange = false;
     }
 
@@ -39,14 +41,14 @@ public class NPCScript : MonoBehaviour
     void Update()
     {
 
-        if(playerInRange == true && dialogueManager.GetComponent<DialogueManager>().isDialogue1Done == true && gameManager.GetComponent<GameManagerScript>().isDiamondCollected == true)
+        if(dialogue.dialogueIsDone == true && Npc.isDialogue2Done == true && playerInRange == true && gameManager.GetComponent<GameManagerScript>().isDiamondCollected == true)
         {
             trigger.visualCue.SetActive(true);
             
             if(Input.GetKey(KeyCode.E))
             {
                 trigger.StartDialogue();
-                isDialogue2Done = true;
+                isDialogue3Done = true;
             }
         }
         else
@@ -55,7 +57,7 @@ public class NPCScript : MonoBehaviour
             playerInRange = false;
         }
 
-        if(isDialogue2Done == true)
+        if(isDialogue3Done == true)
         {
             trigger.visualCue.SetActive(false);
             playerInRange = false;

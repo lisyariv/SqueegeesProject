@@ -17,8 +17,7 @@ public class DialogueManager : MonoBehaviour
 
   // [Header("dialogue UI")]
   public GameObject dialoguePanel;
-  public GameObject trigger;
-  public GameObject invisibleBarrier;
+
   public TextMeshProUGUI dialogueText;
 
   // private Story currentStory;
@@ -30,8 +29,7 @@ public class DialogueManager : MonoBehaviour
   {
     if(instance != null)
     {
-        Debug.LogWarning("Found more than one Dialogue Manager in the scene");
-
+      Debug.LogWarning("Found more than one Dialogue Manager in the scene");
     }
     instance = this;
   }
@@ -77,17 +75,14 @@ public class DialogueManager : MonoBehaviour
       Debug.Log("Conversation ended!");
       dialogueIsPlaying = false;
       dialoguePanel.SetActive(false);
-      isDialogue1Done = true;
-      trigger.SetActive(false);
-      invisibleBarrier.SetActive(false);
     }
+
   }
 
   private void Start()
   {
     dialogueIsPlaying = false;
     dialoguePanel.SetActive(false);
-    isDialogue1Done = false;
   }
 
   private void Update()

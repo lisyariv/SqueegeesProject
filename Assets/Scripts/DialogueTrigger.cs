@@ -32,8 +32,6 @@ public class DialogueTrigger : MonoBehaviour
     {
         if(playerInRange && !dialogueManager.GetComponent<DialogueManager>().dialogueIsPlaying)
         {
-            visualCue.SetActive(true);
-
             if(Input.GetKey(KeyCode.E))
             {
             //    DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
