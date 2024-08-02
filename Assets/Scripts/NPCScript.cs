@@ -5,7 +5,7 @@ using UnityEngine;
 public class NPCScript : MonoBehaviour
 {
     public DialogueTrigger trigger;
-    public BullyScript dialogue;
+    // public BullyScript dialogue;
     public trigger4Npc Npc;
 
     public GameObject dialogueManager;
@@ -41,7 +41,7 @@ public class NPCScript : MonoBehaviour
     void Update()
     {
 
-        if(dialogue.dialogueIsDone == true && Npc.isDialogue2Done == true && playerInRange == true && gameManager.GetComponent<GameManagerScript>().isDiamondCollected == true)
+        if(BullyScript.dialogueIsDone == true && Npc.isDialogue2Done == true && playerInRange == true && GameManagerScript.isDiamondCollected == true)
         {
             trigger.visualCue.SetActive(true);
             

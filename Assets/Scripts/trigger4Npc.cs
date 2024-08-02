@@ -5,7 +5,7 @@ using UnityEngine;
 public class trigger4Npc : MonoBehaviour
 {
     public DialogueTrigger trigger;
-    public BullyScript dialogue;
+    // public BullyScript dialogue;
 
     public bool playerInRange;
     public bool isDialogue2Done;
@@ -39,7 +39,7 @@ public class trigger4Npc : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(dialogue.dialogueIsDone == true && playerInRange == true)
+        if(BullyScript.dialogueIsDone == true && playerInRange == true)
         {
             trigger.visualCue.SetActive(true);
             

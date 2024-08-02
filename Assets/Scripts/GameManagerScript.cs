@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class GameManagerScript : MonoBehaviour
 {
-    public bool isDiamondCollected;
+    public static bool isDiamondCollected;
+
     // Start is called before the first frame update
     void Start()
     {

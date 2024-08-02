@@ -11,53 +11,64 @@ public class DoorScript : MonoBehaviour
     public bool playerInRange;
     public bool ifYesIsPressed;
     public bool ifNoIsPressed;
+    public bool popUpIsPlaying;
 
     public GameObject yesButton;
     public GameObject noButton;
+    public GameObject player;
 
     void Awake()
     {
         yesButton.SetActive(false);
         noButton.SetActive(false);
+        PopUpText.enabled = false;
+        player.GetComponent<PlayerMovement>().ableToMove = true;
     }
     
-    private void OnTriggerEnter2D()
-    {
-        if(collider.gameObject.tag == "MC")
-        {
-            playerInRange = true;
-        }
 
-    }
-
-     private void OnTriggerExit2D()
-    {
-        if(collider.gameObject.tag == "MC")
-        {
-            playerInRange = false;
-        }
-
-    }
     // Update is called once per frame
     void Update()
     {
         if(playerInRange == true)
         {
+            player.GetComponent<PlayerMovement>().ableToMove = false;
+            PopUpText.enabled = true;
             PopUpText.text = "Would you like to exit the school?";
             yesButton.SetActive(true);
             noButton.SetActive(true);
+            popUpIsPlaying = true;
+        }
+        else
+        {
+            player.GetComponent<PlayerMovement>().ableToMove = true;
+            yesButton.SetActive(false);
+            noButton.SetActive(false);
+            playerInRange = false;
+            popUpIsPlaying = false;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if(collider.gameObject.tag == "MC")
+        {
+            Debug.Log("Player is in range.");
+            playerInRange = true;
         }
     }
 
     public void ChangeScene()
     {
+        player.GetComponent<PlayerMovement>().ableToMove = true;
         SceneManager.LoadScene("MainScene");
     }
 
     public void GoBack()
     {
+        player.GetComponent<PlayerMovement>().ableToMove = true;
         PopUpText.enabled = false;
         yesButton.SetActive(false);
         noButton.SetActive(false);
+        playerInRange = false;
     }
 }

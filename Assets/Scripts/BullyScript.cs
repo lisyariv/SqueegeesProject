@@ -8,9 +8,13 @@ public class BullyScript : MonoBehaviour
     public DialogueTrigger trigger;
 
     public bool playerInRange;
-    public bool dialogueIsDone;
+    public static bool dialogueIsDone;
+    // public bool isEmptyVisible;
 
     public GameObject Button;
+    // public GameObject empty;
+
+    public Vector3 LeftRight;
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
@@ -27,7 +31,13 @@ public class BullyScript : MonoBehaviour
         {
             playerInRange = false;
         }
+    }
 
+    void Awake()
+    {
+        // empty.SetActive(false);
+        // isEmptyVisible = false;
+        Button.SetActive(false);
     }
     // Update is called once per frame
     void Update()
@@ -35,11 +45,13 @@ public class BullyScript : MonoBehaviour
         if(playerInRange == true)
         {
             trigger.visualCue.SetActive(true);
-
+    
             if(Input.GetKey(KeyCode.E))
             {
                 trigger.StartDialogue();
                 dialogueIsDone = true;
+                Debug.Log("dialogue is done");
+                Button.SetActive(true);
             }
         }
         else
@@ -53,10 +65,22 @@ public class BullyScript : MonoBehaviour
             trigger.visualCue.SetActive(false);
             playerInRange = false;
         }
+
+        // if(isEmptyVisible == true)
+        // {
+        //     dialogueIsDone = true;
+        // }
+        //GetComponent<Transform>().position += LeftRight;
     }
 
      public void ChangeScene()
     {
         SceneManager.LoadScene("HomescreenScene");
     }
+    // public void OnCollisionEnter2D()
+    // {
+
+    // }
+
+
 }
