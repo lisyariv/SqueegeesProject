@@ -33,7 +33,6 @@ public class DoorScript : MonoBehaviour
         {
             player.GetComponent<PlayerMovement>().ableToMove = false;
             PopUpText.enabled = true;
-            PopUpText.text = "Would you like to exit the school?";
             yesButton.SetActive(true);
             noButton.SetActive(true);
             popUpIsPlaying = true;
@@ -61,6 +60,24 @@ public class DoorScript : MonoBehaviour
     {
         player.GetComponent<PlayerMovement>().ableToMove = true;
         SceneManager.LoadScene("MainScene");
+    }
+
+    public void ChangeScene2()
+    {
+         player.GetComponent<PlayerMovement>().ableToMove = true;
+        SceneManager.LoadScene("Classroom1Scene");
+    }
+
+     public void ChangeScene3()
+    {
+        player.GetComponent<PlayerMovement>().ableToMove = true;
+        SceneManager.LoadScene("Classroom2Scene");
+    }
+
+    public void ChangeScene4()
+    {
+        player.GetComponent<PlayerMovement>().ableToMove = true;
+        SceneManager.LoadScene("CafeteriaScene");
     }
 
     public void GoBack()

@@ -35,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
 
       if(ableToMove == true)
       {
+        //GetComponent<AudioSource>().Play();
         if(Input.GetKey(KeyCode.W))
         {
           GetComponent<Transform>().position += upMovement;
