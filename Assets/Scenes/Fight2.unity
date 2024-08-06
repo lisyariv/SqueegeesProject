@@ -289,10 +289,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fdb86cd472fa6445bae15b81b8b6009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upDirection: {x: 0, y: 0.01, z: 0}
-  downDirection: {x: 0, y: -0.01, z: 0}
-  leftDirection: {x: -0.01, y: 0, z: 0}
-  rightDirection: {x: 0.01, y: 0, z: 0}
+  upDirection: {x: 0, y: 0.05, z: 0}
+  downDirection: {x: 0, y: -0.05, z: 0}
+  leftDirection: {x: -0.05, y: 0, z: 0}
+  rightDirection: {x: 0.05, y: 0, z: 0}
   haswon: 0
   fight: {fileID: 1632054084}
   playerConfidence: 0
