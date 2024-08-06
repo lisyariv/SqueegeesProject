@@ -787,7 +787,7 @@ MonoBehaviour:
   objectPos: {x: 0, y: 5, z: 0}
   player: {fileID: 566463093}
   fight: 0
-  timer: 60
+  timer: 45
   spawnTimer: 0
   holdIndex: 0
   informationText: {fileID: 487419884}
