@@ -70,7 +70,7 @@ public class PlayerFight : MonoBehaviour
             {
                 Destroy(gameObject);
                 SceneManager.LoadScene("MainScene");
-                GetComponent<Fighting>().fight = false;
+                fight.GetComponent<Fighting>().fight = false;
             }
         }
         if(collision.gameObject.tag == "Retaliate")

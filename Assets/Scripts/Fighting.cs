@@ -31,7 +31,10 @@ public class Fighting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        informationText.text = "Dodge the insults and retaliate with objections! \n Controls : WASD \n HP : " + player.GetComponent<PlayerFight>().playerConfidence + "\n Time : " + timer;
+        if (player.gameObject != null)
+        {
+            informationText.text = "Dodge the insults and retaliate with objections! \n Controls : WASD \n HP : " + player.GetComponent<PlayerFight>().playerConfidence + "\n Time : " + timer;
+        }
         timer -= Time.deltaTime;
         spawnTimer += Time.deltaTime;
         objectPos.x = Random.Range(-11, 12);
