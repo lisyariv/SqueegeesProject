@@ -61,7 +61,7 @@ public class PlayerFight : MonoBehaviour
         if(collision.gameObject.tag == "Expression")
         {
             playerConfidence--;
-            if(fight.GetComponent<Fighting>().timer <= 10)
+            if(fight.GetComponent<Fighting>().timer <= 20)
             {
                 playerConfidence--;
             }
@@ -86,10 +86,10 @@ public class PlayerFight : MonoBehaviour
                 fight.GetComponent<Fighting>().timer -= 10;
             } else
             {
-                fight.GetComponent<Fighting>().timer += 5;
-                if(fight.GetComponent<Fighting>().timer >= 60)
+                fight.GetComponent<Fighting>().timer += 7;
+                if(fight.GetComponent<Fighting>().timer >= 90)
                 {
-                    fight.GetComponent<Fighting>().timer = 60;
+                    fight.GetComponent<Fighting>().timer = 90;
                 }
             }
         }
