@@ -87,9 +87,9 @@ public class PlayerFight : MonoBehaviour
             } else
             {
                 fight.GetComponent<Fighting>().timer += 7;
-                if(fight.GetComponent<Fighting>().timer >= 90)
+                if(fight.GetComponent<Fighting>().timer >= 60)
                 {
-                    fight.GetComponent<Fighting>().timer = 90;
+                    fight.GetComponent<Fighting>().timer = 60;
                 }
             }
         }
