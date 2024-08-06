@@ -12,7 +12,6 @@ public class FollowThePath : MonoBehaviour
 
     private int waypointIndex;
 
-    public bool didPlayerWin;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +22,7 @@ public class FollowThePath : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(waypointIndex <= waypoints.Length - 1 && didPlayerWin == true)
+        if(waypointIndex <= waypoints.Length - 1 && PlayerFight.haswon == true)
         {
             transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
             

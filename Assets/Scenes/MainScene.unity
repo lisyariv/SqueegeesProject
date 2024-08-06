@@ -5400,7 +5400,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -14880,6 +14880,8 @@ MonoBehaviour:
     sprite: {fileID: -9155601036491618205, guid: cdd72c56c929a4203b777f03ff545f9f, type: 3}
   visualCue: {fileID: 1013014447}
   dialogueManager: {fileID: 1440020340}
+  dialogueCanPlay: 0
+  visualCueIsShown: 0
 --- !u!61 &1481486218
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14904,7 +14906,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 12, y: 6}
+  m_Size: {x: 12, y: 5}
   m_EdgeRadius: 0
 --- !u!114 &1481486219
 MonoBehaviour:
@@ -14920,6 +14922,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trigger: {fileID: 1481486217}
   playerInRange: 0
+  visualCueIsShown: 0
+  dialogueCanPlay: 0
   Button: {fileID: 1244547904}
   LeftRight: {x: 0, y: 0, z: 0}
 --- !u!1 &1486222059
@@ -15816,7 +15820,6 @@ MonoBehaviour:
   - {fileID: 178019106}
   - {fileID: 1556338443}
   moveSpeed: 2
-  didPlayerWin: 0
 --- !u!95 &1574743764
 Animator:
   serializedVersion: 3
@@ -17384,6 +17387,12 @@ MonoBehaviour:
       lunch, I have Language class and P.E. "
   - actorId: 0
     message: "Ah dang, we don\u2019t have a single class together! "
+  - actorId: 1
+    message: 'Really? That kinda sucks. '
+  - actorId: 0
+    message: Yeah, but at least we can hang out during lunch and stuff.
+  - actorId: 1
+    message: Sure.
   actors:
   - name: Meredith
     sprite: {fileID: -3384591145140136883, guid: cdd72c56c929a4203b777f03ff545f9f, type: 3}
@@ -17391,6 +17400,8 @@ MonoBehaviour:
     sprite: {fileID: -8978439503034565388, guid: cdd72c56c929a4203b777f03ff545f9f, type: 3}
   visualCue: {fileID: 1879127505}
   dialogueManager: {fileID: 1440020340}
+  dialogueCanPlay: 0
+  visualCueIsShown: 0
 --- !u!114 &1742781082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20050,33 +20061,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   messages:
   - actorId: 0
-    message: Hey there, are you okay? You seem a bit nervous.
+    message: "Hey, are you okay? You don\u2019t look so good. "
   - actorId: 1
-    message: 'Yeah, I think so. I kind of just bumped into someone and they were
-      threatening me a bunch. '
+    message: "Yeah, I just had a really rough encounter. This guy I ran into at the
+      entrance suddenly dragged me to the cafeteria and started screaming insults
+      at me. I didn\u2019t know what to do so I just ran away."
   - actorId: 0
-    message: 'Ahh, you''ll be fine. In this high school, they''ll won''t let anything
-      drastic happen. '
-  - actorId: 0
-    message: Anyways, what's your name? Mine is Meredith.
+    message: "Oh, I\u2019m so sorry that happened to you, and even on the first day.
+      Can I ask you what they looked like? "
   - actorId: 1
-    message: It's Leiland, nice to meet you, Meredith!
+    message: "Uh yeah, they\u2019re pretty large. And they were wearing a green shirt
+      and khaki pants. Why? "
   - actorId: 0
-    message: "Yeah, nice to meet you as well! I can tell you\u2019re still nervous
-      but you shouldn\u2019t be. "
+    message: "Oh yeah I know him, we used to go to the same middle school. He\u2019s
+      the biggest bully I know, But he\u2019s never actually gone beyond yelling
+      from what I\u2019ve heard so it should be fine. "
   - actorId: 0
-    message: "I\u2019m sure the majority of the people here are kind so there\u2019s
-      no reason to worry. "
+    message: "If anything, we can just tell the teacher, right? Anyways what\u2019s
+      your name? My name is Meredith. "
+  - actorId: 1
+    message: "Mine is Leiland, it\u2019s nice to meet you. "
+  - actorId: 0
+    message: "Yeah, nice to meet you as well! You don\u2019t have to be so scared.
+      He may act tough but he\u2019s never done anything to hurt people physically.
+      Plus, I\u2019m sure that the majority of people here are kind so there\u2019s
+      no reason to worry.  "
+  - actorId: 1
+    message: 'Yeah I guess you could be right. '
+  - actorId: 0
+    message: ' Hey, since we became acquainted, do you think you can help me with
+      something?'
   - actorId: 0
     message: "It\u2019s the first day of school and I already lost my marker. Seriously,
-      I can\u2019t find it anywhere and I\u2019m lowkey panicking. "
+      I can\u2019t find it anywhere and I\u2019m kinda panicking."
   - actorId: 1
-    message: 'Oh, I can try to find it for you. '
+    message: Oh, I can try to find it for you.
   - actorId: 0
-    message: "Really? I\u2019d appreciate that so much! I already checked the classroom
-      I was in, so I think it\u2019s somewhere in the hallway. "
-  - actorId: 0
-    message: 'Really dude, thank you for helping me. '
+    message: "Really? I\u2019d appreciate that so much! I\u2019m gonna re-check the
+      classroom I was in, so can you look in the hallway for me? Really dude, thank
+      you for helping me.  "
+  - actorId: 1
+    message: 'Sure, no problem. Besides, it might help me get my mind off things. '
   actors:
   - name: Meredith
     sprite: {fileID: -3384591145140136883, guid: cdd72c56c929a4203b777f03ff545f9f, type: 3}
@@ -20084,6 +20109,8 @@ MonoBehaviour:
     sprite: {fileID: -8978439503034565388, guid: cdd72c56c929a4203b777f03ff545f9f, type: 3}
   visualCue: {fileID: 1879127505}
   dialogueManager: {fileID: 1440020340}
+  dialogueCanPlay: 0
+  visualCueIsShown: 0
 --- !u!114 &2060333347
 MonoBehaviour:
   m_ObjectHideFlags: 0

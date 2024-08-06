@@ -11,6 +11,9 @@ public class DialogueTrigger : MonoBehaviour
     public GameObject visualCue;
     public GameObject dialogueManager;
 
+    public bool dialogueCanPlay;
+    public bool visualCueIsShown;
+
     // [Header("ink JSON")]
     // [SerializeField] private TextAsset inkJSON;
 
@@ -33,16 +36,30 @@ public class DialogueTrigger : MonoBehaviour
         if(playerInRange && !dialogueManager.GetComponent<DialogueManager>().dialogueIsPlaying)
         {
             visualCue.SetActive(true);
-            if(Input.GetKey(KeyCode.E))
+            visualCueIsShown = true;
+
+            if(visualCueIsShown == true)
             {
-            //    DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
-            FindObjectOfType<DialogueManager>().OpenDialogue(messages, actors);
-            Debug.Log("Message is displayed.");
+                dialogueCanPlay = true;
+            }
+            else
+            {
+                dialogueCanPlay = false;
+            }
+
+            if(dialogueCanPlay == true)
+            {
+                if(Input.GetKey(KeyCode.E))
+                {
+                  FindObjectOfType<DialogueManager>().OpenDialogue(messages, actors);
+                  Debug.Log("Message is displayed.");
+                }
             }
         }
         else
         {
             visualCue.SetActive(false);
+            visualCueIsShown = false;
         }
         
     }
@@ -55,10 +72,6 @@ public class DialogueTrigger : MonoBehaviour
 
     }
 
-    // private void OnClick()
-    // {
-    //     Debug.Log(inkJSON.text);
-    // }
 }
 
 [System.Serializable]

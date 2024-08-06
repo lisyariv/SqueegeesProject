@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Fight2.unity
     guid: 95eca4c0ab52a40ccb91811505540e63
   - enabled: 1
+    path: Assets/Scenes/LoseScene.unity
+    guid: e8a25d72031300b4c9d37e9db62e1d55
+  - enabled: 1
     path: Assets/Scenes/SchoolScene.unity
     guid: d62537a178e0048889ddd49f2b346870
   - enabled: 1

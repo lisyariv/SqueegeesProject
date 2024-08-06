@@ -9,6 +9,8 @@ public class BullyScript : MonoBehaviour
 
     public bool playerInRange;
     public static bool dialogueIsDone;
+    public bool visualCueIsShown;
+    public bool dialogueCanPlay;
     // public bool isEmptyVisible;
 
     public GameObject Button;
@@ -45,18 +47,33 @@ public class BullyScript : MonoBehaviour
         if(playerInRange == true)
         {
             trigger.visualCue.SetActive(true);
-    
-            if(Input.GetKey(KeyCode.E))
+            visualCueIsShown = true;
+
+            if(visualCueIsShown == true)
             {
-                trigger.StartDialogue();
-                dialogueIsDone = true;
-                Debug.Log("dialogue is done");
-                Button.SetActive(true);
+                dialogueCanPlay = true;
+            }
+            else
+            {
+                dialogueCanPlay = false;
+            }
+
+            if(dialogueCanPlay == true)
+            {
+                if(Input.GetKey(KeyCode.E))
+                {
+                   trigger.StartDialogue();
+                   dialogueIsDone = true;
+                   Debug.Log("dialogue is done");
+                   Button.SetActive(true);
+                }
+
             }
         }
         else
         {
             trigger.visualCue.SetActive(false);
+            visualCueIsShown = false;
             playerInRange = false;
         }
 

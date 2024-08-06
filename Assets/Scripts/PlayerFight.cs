@@ -9,7 +9,7 @@ public class PlayerFight : MonoBehaviour
     public Vector3 downDirection;
     public Vector3 leftDirection;
     public Vector3 rightDirection;
-    public bool haswon;
+    public static bool haswon;
     public GameObject fight;
     public int playerConfidence;
 
@@ -45,8 +45,10 @@ public class PlayerFight : MonoBehaviour
         if (playerConfidence > 0 && fight.GetComponent<Fighting>().timer <= 0)
         {
             haswon = true;
+
             if (haswon)
             {
+                SceneManager.LoadScene("MainScene");
                 Debug.Log("You win!");
             }
             else
@@ -69,7 +71,7 @@ public class PlayerFight : MonoBehaviour
             if (playerConfidence <= 0)
             {
                 Destroy(gameObject);
-                SceneManager.LoadScene("MainScene");
+                SceneManager.LoadScene("LoseScene");
                 fight.GetComponent<Fighting>().fight = false;
             }
         }
