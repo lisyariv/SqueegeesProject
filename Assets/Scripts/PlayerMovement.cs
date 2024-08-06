@@ -32,39 +32,38 @@ public class PlayerMovement : MonoBehaviour
   {
     if(dialogueManager.GetComponent<DialogueManager>().dialogueIsPlaying == false)
     {
+      ableToMove = true;
 
-      if(ableToMove == true)
+      if(Input.GetKey(KeyCode.W))
       {
-        //GetComponent<AudioSource>().Play();
-        if(Input.GetKey(KeyCode.W))
-        {
-          GetComponent<Transform>().position += upMovement;
-          GetComponent<Animator>().Play("walkingWBack");
-        }
-        else if(Input.GetKey(KeyCode.A))
-        {
-          GetComponent<Transform>().position += leftMovement;
-          GetComponent<Animator>().Play("walkingLeft");
-        }
-        else if(Input.GetKey(KeyCode.S))
-        {
-          GetComponent<Transform>().position += downMovement;
-          GetComponent<Animator>().Play("walkingForward");
-        }
-        else if(Input.GetKey(KeyCode.D))
-        {
-          GetComponent<Transform>().position += rightMovement;
-          GetComponent<Animator>().Play("walkingRight");
-        }
-        else
-        {
-          ableToMove = false;
-          GetComponent<Animator>().Play("Idle");
-        }
-
+        GetComponent<Transform>().position += upMovement;
+        GetComponent<Animator>().Play("walkingWBack");
       }
-      
+      else if(Input.GetKey(KeyCode.A))
+      {
+        GetComponent<Transform>().position += leftMovement;
+        GetComponent<Animator>().Play("walkingLeft");
+      }
+      else if(Input.GetKey(KeyCode.S))
+      {
+        GetComponent<Transform>().position += downMovement;
+        GetComponent<Animator>().Play("walkingForward");
+      }
+      else if(Input.GetKey(KeyCode.D))
+      {
+        GetComponent<Transform>().position += rightMovement;
+        GetComponent<Animator>().Play("walkingRight");
+      }
+      else
+      {
+        GetComponent<Animator>().Play("Idle");
+      }
     }
+    else
+    {
+      ableToMove = false;
+    }
+
     if(isTextDisplayed == true)
     {
       timer += Time.deltaTime;

@@ -75,7 +75,7 @@ public class BullyScript : MonoBehaviour
 
      public void ChangeScene()
     {
-        SceneManager.LoadScene("HomescreenScene");
+        SceneManager.LoadScene("Fight2");
     }
     // public void OnCollisionEnter2D()
     // {

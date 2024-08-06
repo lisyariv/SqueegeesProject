@@ -32,10 +32,12 @@ public class DialogueTrigger : MonoBehaviour
     {
         if(playerInRange && !dialogueManager.GetComponent<DialogueManager>().dialogueIsPlaying)
         {
+            visualCue.SetActive(true);
             if(Input.GetKey(KeyCode.E))
             {
             //    DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
             FindObjectOfType<DialogueManager>().OpenDialogue(messages, actors);
+            Debug.Log("Message is displayed.");
             }
         }
         else
@@ -49,15 +51,6 @@ public class DialogueTrigger : MonoBehaviour
         if(collider.gameObject.tag == "MC")
         {
             playerInRange = true;
-        }
-
-    }
-
-    private void OnTriggerExit2D(Collider2D collider)
-    {
-        if(collider.gameObject.tag == "MC")
-        {
-            playerInRange = false;
         }
 
     }

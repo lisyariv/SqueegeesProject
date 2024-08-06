@@ -4,20 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Expression
-<<<<<<< HEAD
-  - taskItem
   - MC
-  - Bully
-=======
-  - Barrier
-  - Retaliate
->>>>>>> origin/KaiBranch
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Top
+  - 
   - Water
   - UI
   - 

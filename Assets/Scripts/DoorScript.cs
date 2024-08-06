@@ -68,16 +68,11 @@ public class DoorScript : MonoBehaviour
         SceneManager.LoadScene("Classroom1Scene");
     }
 
-     public void ChangeScene3()
-    {
-        player.GetComponent<PlayerMovement>().ableToMove = true;
-        SceneManager.LoadScene("Classroom2Scene");
-    }
 
     public void ChangeScene4()
     {
         player.GetComponent<PlayerMovement>().ableToMove = true;
-        SceneManager.LoadScene("CafeteriaScene");
+        SceneManager.LoadScene("CafateriaScene");
     }
 
     public void GoBack()
@@ -87,5 +82,11 @@ public class DoorScript : MonoBehaviour
         yesButton.SetActive(false);
         noButton.SetActive(false);
         playerInRange = false;
+    }
+
+    public void CorridorScene()
+    {
+        player.GetComponent<PlayerMovement>().ableToMove = true;
+        SceneManager.LoadScene("SchoolScene");
     }
 }
