@@ -6,15 +6,14 @@ public class NPCScript : MonoBehaviour
 {
     public DialogueTrigger trigger;
     // public BullyScript dialogue;
-    public trigger4Npc Npc;
 
     public GameObject dialogueManager;
     public GameObject gameManager;
 
     public bool playerInRange;
-    public bool isDialogue3Done;
+    public static bool isDialogue3Done;
 
-    public void Awake()
+    public void Start()
     {
         isDialogue3Done = false;
         playerInRange = false;
@@ -41,7 +40,7 @@ public class NPCScript : MonoBehaviour
     void Update()
     {
 
-        if(BullyScript.dialogueIsDone == true && Npc.isDialogue2Done == true && playerInRange == true && GameManagerScript.isDiamondCollected == true)
+        if(BullyScript.dialogueIsDone == true && trigger4Npc.isDialogue2Done == true && playerInRange == true && GameManagerScript.isDiamondCollected == true)
         {
             trigger.visualCue.SetActive(true);
             

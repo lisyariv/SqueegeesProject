@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -69,6 +70,10 @@ public class DialogueManager : MonoBehaviour
     if(activeMessage < currentMessages.Length)
     {
       DisplayMessage();
+    }
+    else if(NPCScript.isDialogue3Done == true && dialogueIsPlaying == false)
+    {
+      SceneManager.LoadScene("EndingScene");
     }
     else
     {

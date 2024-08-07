@@ -8,15 +8,26 @@ public class trigger4Npc : MonoBehaviour
     // public BullyScript dialogue;
 
     public bool playerInRange;
-    public bool isDialogue2Done;
+    public static bool isDialogue2Done;
 
     public GameObject triggerObject;
     public GameObject invisibleBarrier;
 
-    public void Awake()
+    public void Start()
     {
         isDialogue2Done = false;
         playerInRange = false;
+    }
+
+    public void Awake()
+    {
+        if(isDialogue2Done == true)
+        {
+            trigger.visualCue.SetActive(true);
+            playerInRange = false;
+            triggerObject.SetActive(false);
+            invisibleBarrier.SetActive(false);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {
@@ -39,7 +50,7 @@ public class trigger4Npc : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(BullyScript.dialogueIsDone == true && playerInRange == true)
+        if(BullyScript.dialogueIsDone == true && playerInRange == true && isDialogue2Done == false)
         {
             trigger.visualCue.SetActive(true);
             
@@ -57,10 +68,11 @@ public class trigger4Npc : MonoBehaviour
 
         if(isDialogue2Done == true)
         {
-            trigger.visualCue.SetActive(false);
+            trigger.visualCue.SetActive(true);
             playerInRange = false;
             triggerObject.SetActive(false);
             invisibleBarrier.SetActive(false);
         }
+
     }
 }

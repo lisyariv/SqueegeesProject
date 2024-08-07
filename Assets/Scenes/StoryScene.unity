@@ -623,16 +623,16 @@ MonoBehaviour:
   messages:
   - message: "In terms of social hierarchy, you were at the very bottom, below the
       very desks and seats in the classroom. But you don\u2019t mind, because you
-      were a loner to begin with and love your alone time."
+      were a loner to begin with and love your alone time. "
   - message: However, after graduating middle school and seeing everyone else celebrating,
       laughing, and cheering without you, there was a slight pain in your chest.
       For the first time ever, you felt sad to be alone.
   - message: "With these feelings realized you make it your goal to make at least
       one friend during high school. On the first day, you realize that you don\u2019t
       know how to talk to people."
-  - message: Everyone else seems to either already have friends or are quickly making
-      them. Everywhere you look, groups of people are being made. Embarrassed, you
-      quickly walk to your classroom with your head down.
+  - message: 'Everyone else seems to either already have friends or are quickly making
+      them. Everywhere you look groups of people are being made, embarrassed you
+      quickly walk to your classroom with your head down.  '
   dialogueManager: {fileID: 401233241}
   dialoguestarts: 0
 --- !u!1 &1423578472

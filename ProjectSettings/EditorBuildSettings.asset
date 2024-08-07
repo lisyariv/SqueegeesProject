@@ -32,6 +32,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Classroom1Scene.unity
     guid: b3270fe9665c44f008e4ba5faf14c99b
+  - enabled: 1
+    path: Assets/Scenes/EndingScene.unity
+    guid: 6f2af0c94809547338c9fce4f935de87
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
