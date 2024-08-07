@@ -289,10 +289,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fdb86cd472fa6445bae15b81b8b6009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upDirection: {x: 0, y: 0.05, z: 0}
-  downDirection: {x: 0, y: -0.05, z: 0}
-  leftDirection: {x: -0.05, y: 0, z: 0}
-  rightDirection: {x: 0.05, y: 0, z: 0}
+  upDirection: {x: 0, y: 0.1, z: 0}
+  downDirection: {x: 0, y: -0.1, z: 0}
+  leftDirection: {x: -0.1, y: 0, z: 0}
+  rightDirection: {x: 0.1, y: 0, z: 0}
   haswon: 0
   fight: {fileID: 1632054084}
   playerConfidence: 0
@@ -709,7 +709,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 250, y: 250}
+  m_SizeDelta: {x: 275, y: 275}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1207194708
 MonoBehaviour:
@@ -789,6 +789,7 @@ MonoBehaviour:
   fight: 0
   timer: 45
   spawnTimer: 0
+  globalTimer: 0
   holdIndex: 0
   informationText: {fileID: 487419884}
 --- !u!4 &1632054086

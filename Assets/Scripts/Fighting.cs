@@ -13,6 +13,7 @@ public class Fighting : MonoBehaviour
     public bool fight;
     public float timer;
     public float spawnTimer;
+    public float globalTimer;
     public int holdIndex;
 
     public TextMeshProUGUI informationText;
@@ -33,16 +34,13 @@ public class Fighting : MonoBehaviour
     {
         if (player.gameObject != null)
         {
-            informationText.text = "Dodge the insults and retaliate with objections! \n Controls : WASD \n HP : " + player.GetComponent<PlayerFight>().playerConfidence + "\n Time : " + timer;
+            informationText.text = "Dodge the insults and retaliate with objections! Objections lower time. When time hits 20 or less, insults do double damage! \n Controls : WASD \n HP : " + player.GetComponent<PlayerFight>().playerConfidence + "\n Time : " + timer;
         }
         timer -= Time.deltaTime;
         spawnTimer += Time.deltaTime;
+        globalTimer += Time.deltaTime;
         objectPos.x = Random.Range(-11, 12);
         spawnObjects();
-        if (timer <= 0)
-        {
-            SceneManager.LoadScene("MainScene");
-        }
         
 
     } 
