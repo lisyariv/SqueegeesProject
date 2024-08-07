@@ -45,6 +45,16 @@ public class PlayerFight : MonoBehaviour
         if ((playerConfidence > 0 && fight.GetComponent<Fighting>().timer <= 0) || (playerConfidence > 0 && fight.GetComponent<Fighting>().globalTimer >= 150))
         {
             haswon = true;
+            
+            if(haswon == true)
+            {
+                SceneManager.LoadScene("MainScene");
+                Debug.Log("You won!");
+            }
+            else
+            {
+                Debug.Log("You lost...");
+            }
         }
     }
 
