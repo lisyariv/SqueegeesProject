@@ -42,19 +42,9 @@ public class PlayerFight : MonoBehaviour
             GetComponent<Transform>().position += rightDirection;
         }
 
-        if (playerConfidence > 0 && fight.GetComponent<Fighting>().timer <= 0)
+        if ((playerConfidence > 0 && fight.GetComponent<Fighting>().timer <= 0) || (playerConfidence > 0 && fight.GetComponent<Fighting>().globalTimer >= 150))
         {
             haswon = true;
-
-            if (haswon)
-            {
-                SceneManager.LoadScene("MainScene");
-                Debug.Log("You win!");
-            }
-            else
-            {
-                Debug.Log("You Lose...");
-            }
         }
     }
 
@@ -83,7 +73,7 @@ public class PlayerFight : MonoBehaviour
                 playerConfidence = 7;
             }
             Destroy(collision.gameObject);
-            if(Random.Range(0,3) == 0)
+            if(Random.Range(0,2) == 0)
             {
                 fight.GetComponent<Fighting>().timer -= 10;
             } else
