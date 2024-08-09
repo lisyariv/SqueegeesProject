@@ -14,7 +14,7 @@ public class GameManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        isDiamondCollected = false;
+        // isDiamondCollected = false;
 
         taskText.text = "Walk to the school entrance";
     }

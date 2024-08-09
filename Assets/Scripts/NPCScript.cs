@@ -9,6 +9,7 @@ public class NPCScript : MonoBehaviour
 
     public GameObject dialogueManager;
     public GameObject gameManager;
+    public GameObject visualCue;
 
     public bool playerInRange;
     public static bool isDialogue3Done;
@@ -42,7 +43,7 @@ public class NPCScript : MonoBehaviour
 
         if(BullyScript.dialogueIsDone == true && trigger4Npc.isDialogue2Done == true && playerInRange == true && GameManagerScript.isDiamondCollected == true)
         {
-            trigger.visualCue.SetActive(true);
+            visualCue.SetActive(true);
             
             if(Input.GetKey(KeyCode.E))
             {
@@ -52,13 +53,13 @@ public class NPCScript : MonoBehaviour
         }
         else
         {
-            trigger.visualCue.SetActive(false);
+            visualCue.SetActive(false);
             playerInRange = false;
         }
 
         if(isDialogue3Done == true)
         {
-            trigger.visualCue.SetActive(false);
+            visualCue.SetActive(false);
             playerInRange = false;
         }
 

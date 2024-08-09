@@ -46,7 +46,7 @@ public class DialogueTrigger : MonoBehaviour
                 dialogueCanPlay = false;
             }
 
-            if(dialogueCanPlay == true)
+            if(dialogueCanPlay == true && visualCueIsShown == true)
             {
                 if(Input.GetKey(KeyCode.E))
                 {

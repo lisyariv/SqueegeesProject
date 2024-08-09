@@ -16,8 +16,7 @@ public class trigger4Npc : MonoBehaviour
 
     public void Start()
     {
-        isDialogue2Done = false;
-        playerInRange = false;
+        
     }
 
     public void Awake()
@@ -28,23 +27,7 @@ public class trigger4Npc : MonoBehaviour
             invisibleBarrier.SetActive(false);
         }
     }
-    private void OnTriggerEnter2D(Collider2D collider)
-    {
-        if(collider.gameObject.tag == "MC")
-        {
-            playerInRange = true;
-        }
-
-    }
-
-    private void OnTriggerExit2D(Collider2D collider)
-    {
-        if(collider.gameObject.tag == "MC")
-        {
-            playerInRange = false;
-        }
-
-    }
+   
 
     // Update is called once per frame
     void Update()
@@ -71,6 +54,25 @@ public class trigger4Npc : MonoBehaviour
             playerInRange = false;
             triggerObject.SetActive(false);
             invisibleBarrier.SetActive(false);
+        }
+
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if(collider.gameObject.tag == "MC")
+        {
+            playerInRange = true;
+        }
+
+    }
+
+    private void OnTriggerExit2D(Collider2D collider)
+    {
+        if(collider.gameObject.tag == "MC")
+        {
+            playerInRange = false;
         }
 
     }

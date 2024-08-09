@@ -17636,6 +17636,7 @@ MonoBehaviour:
   trigger: {fileID: 1742781081}
   dialogueManager: {fileID: 1440020340}
   gameManager: {fileID: 781438558}
+  visualCue: {fileID: 1879127505}
   playerInRange: 0
 --- !u!58 &1742781083
 CircleCollider2D:
