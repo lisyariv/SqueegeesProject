@@ -33,7 +33,7 @@ public class InsideSchoolScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(playerInRange == true)
+        if(playerInRange == true && trigger4Npc.isDialogue2Done == true)
         {
             player.GetComponent<PlayerMovement>().ableToMove = false;
             popUpText.enabled = true;

@@ -10939,7 +10939,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 7410566195918354644, guid: 6d0c80c93d0a049619adedd1bd7962a2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -20374,6 +20374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trigger: {fileID: 2060333346}
+  dlogM: {fileID: 1440020342}
   playerInRange: 0
   triggerObject: {fileID: 2060333343}
   invisibleBarrier: {fileID: 374813432}

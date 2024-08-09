@@ -5,6 +5,7 @@ using UnityEngine;
 public class trigger4Npc : MonoBehaviour
 {
     public DialogueTrigger trigger;
+    public DialogueManager dlogM;
     // public BullyScript dialogue;
 
     public bool playerInRange;
@@ -23,8 +24,6 @@ public class trigger4Npc : MonoBehaviour
     {
         if(isDialogue2Done == true)
         {
-            trigger.visualCue.SetActive(true);
-            playerInRange = false;
             triggerObject.SetActive(false);
             invisibleBarrier.SetActive(false);
         }
@@ -66,9 +65,9 @@ public class trigger4Npc : MonoBehaviour
             playerInRange = false;
         }
 
-        if(isDialogue2Done == true)
+        if(isDialogue2Done == true && dlogM.dialogueIsPlaying == false)
         {
-            trigger.visualCue.SetActive(true);
+            //trigger.visualCue.SetActive(t);
             playerInRange = false;
             triggerObject.SetActive(false);
             invisibleBarrier.SetActive(false);

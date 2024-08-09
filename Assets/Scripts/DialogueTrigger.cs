@@ -28,7 +28,6 @@ public class DialogueTrigger : MonoBehaviour
     public void StartDialogue()
     {
         FindObjectOfType<DialogueManager>().OpenDialogue(messages, actors);
-
     }
 
     private void Update()
@@ -55,6 +54,10 @@ public class DialogueTrigger : MonoBehaviour
                   Debug.Log("Message is displayed.");
                 }
             }
+            else
+            {
+                Debug.Log("Message is not displayed");
+            }
         }
         else
         {
@@ -71,6 +74,16 @@ public class DialogueTrigger : MonoBehaviour
         }
 
     }
+
+    private void OnTriggerExit2D(Collider2D collider)
+    {
+        if(collider.gameObject.tag == "MC")
+        {
+            playerInRange = false;
+        }
+
+    }
+
 
 }
 
