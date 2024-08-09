@@ -71,7 +71,7 @@ public class DialogueManager : MonoBehaviour
     {
       DisplayMessage();
     }
-    else if(NPCScript.isDialogue3Done == true && dialogueIsPlaying == false)
+    else if(NPCScript.isDialogue3Done == true && dialogueIsPlaying == true)
     {
       SceneManager.LoadScene("EndingScene");
     }
